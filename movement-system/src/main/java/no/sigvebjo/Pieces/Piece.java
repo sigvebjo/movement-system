@@ -15,6 +15,12 @@ public abstract class Piece {
         this.position = position;
     }
 
+    /**
+     * Attempts to move the piece.
+     * 
+     * @param move index of move to be made
+     * @return success boolean
+     */
     public boolean move(int move) {
         boolean success = false;
 
@@ -26,6 +32,9 @@ public abstract class Piece {
         return success;
     }
 
+    /**
+     * Interface method to check and select valid moves for the piece.
+     */
     public void checkMoves() {}
 
     public Vector2 getPosition() {

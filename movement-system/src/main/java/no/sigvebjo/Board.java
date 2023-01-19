@@ -29,16 +29,17 @@ public class Board {
         return board.get(position);
     }
 
-    public boolean updateBoard() {
-        boolean success = false;
-
+    /**
+     * Checks the board for changes and applies them.
+     */
+    public void updateBoard() {
         HashMap<Vector2, Piece> updatedBoard = new HashMap<Vector2, Piece>();
 
-        for (Vector2 key : board.keySet()) {
-            Piece tempPiece = board.get(key);
+        for (Vector2 key : this.board.keySet()) {
+            Piece tempPiece = this.board.get(key);
             updatedBoard.put(tempPiece.getPosition(), tempPiece);
         }
 
-        return success;
+        this.board = updatedBoard;
     }
 }
