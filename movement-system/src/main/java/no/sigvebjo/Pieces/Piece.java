@@ -9,8 +9,7 @@ import no.sigvebjo.Vector2;
  */
 public abstract class Piece {
     protected Vector2 position;
-    protected ArrayList<Vector2> potentialMoves;
-    protected ArrayList<Vector2> validMoves;
+    protected ArrayList<MoveData> validMoves;
 
     public Piece(Vector2 position){
         this.position = position;
@@ -20,7 +19,7 @@ public abstract class Piece {
         boolean success = false;
 
         if (move >= 0 && move < validMoves.size()) {
-            this.position.add(validMoves.get(move));
+            this.position = this.position.add(validMoves.get(move).getDestination());
             success = true;
         }
 

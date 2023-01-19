@@ -17,9 +17,8 @@ public class Vector2 {
         return this.varY;
     }
 
-    public void add(Vector2 other) {
-        this.varX += other.x();
-        this.varY += other.y();
+    public Vector2 add(Vector2 other) {
+        return new Vector2(varX + other.x(), varY + other.y());
     }
 
     @Override
